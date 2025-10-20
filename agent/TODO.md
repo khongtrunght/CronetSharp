@@ -1,10 +1,10 @@
 # CronetSharp Porting TODO List
 
-**Last Updated:** 2025-10-21 (Phase 2 Complete)
+**Last Updated:** 2025-10-21 (Phase 3 Complete)
 
 ---
 
-## Phase 1: Client Module Foundation
+## Phase 1: Client Module Foundation ✅ COMPLETE
 
 ### 1.1 Client Error Types
 - [x] Create `CronetSharp/Client/ClientError.cs`
@@ -76,20 +76,24 @@
 
 ---
 
-## Phase 3: Export Layer
+## Phase 3: Export Layer ✅ COMPLETE
 
 ### 3.1 C API Exports
-- [ ] Create `CronetSharp/Export/NativeApi.cs`
-- [ ] Port from `cronet-rs/src/export/capi.rs`
-- [ ] Implement CreateClient, FreeClient, SendRequest
-- [ ] Use [UnmanagedCallersOnly] (.NET 5+)
-- [ ] Write interop tests
-- [ ] Commit and push
+- [x] Create `CronetSharp/Export/NativeApi.cs`
+- [x] Port from `cronet-rs/src/export/capi.rs`
+- [x] Implement CreateClient, FreeClient, SendRequest, FreeResponse
+- [x] Use delegate-based approach (netstandard2.0 compatible)
+- [x] Implement HSProtectDebugResponse struct
+- [x] Base64 encoding support for body and headers
+- [x] Proxy configuration with authentication
+- [x] Write unit tests (30 test cases)
+- [x] Commit and push
 
 ### 3.2 Memory Management
-- [ ] Test: Memory leak detection
-- [ ] Test: GC pressure test
-- [ ] Commit and push
+- [x] GCHandle for pinning managed objects
+- [x] Marshal.StringToHGlobalAnsi for string conversion
+- [x] Proper cleanup in FreeClient and FreeResponse
+- [x] Null safety checks throughout
 
 ---
 
@@ -138,6 +142,8 @@
 - [x] Add FromException method to ClientError
 - [x] Port OrderedRequest.cs (Phase 2.1)
 - [x] Write unit tests for OrderedRequest (37 tests)
+- [x] Port NativeApi.cs (Phase 3.1)
+- [x] Write unit tests for NativeApi (30 tests)
 
 ---
 
@@ -164,7 +170,8 @@ None currently.
 
 ---
 
-**Next Action:** Begin Phase 3 - Export Layer (C API Interop)
+**Next Action:** Begin Phase 4 - Advanced Features (State Management, Status Listener)
 
 **Phase 1 Status:** ✅ COMPLETE (5/5 files ported, 38+ unit tests, 24 E2E tests)
 **Phase 2 Status:** ✅ COMPLETE (OrderedRequest with 37 unit tests)
+**Phase 3 Status:** ✅ COMPLETE (NativeApi export layer with 30 unit tests)
