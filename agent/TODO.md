@@ -20,28 +20,28 @@
 - [x] Commit and push
 
 ### 1.3 Body Upload Provider
-- [ ] Create `CronetSharp/Client/BodyUploadProvider.cs`
-- [ ] Port from `cronet-rs/src/client/body_upload_provider.rs`
-- [ ] Integrate with existing UploadDataProvider
-- [ ] Write unit tests
-- [ ] Commit and push
+- [x] Create `CronetSharp/Client/BodyUploadProvider.cs`
+- [x] Port from `cronet-rs/src/client/body_upload_provider.rs`
+- [x] Integrate with existing UploadDataProvider
+- [x] Write unit tests (10 test cases)
+- [x] Commit and push
 
 ### 1.4 Response Handler
-- [ ] Create `CronetSharp/Client/ResponseHandler.cs`
-- [ ] Port from `cronet-rs/src/client/response_handler.rs`
-- [ ] Implement UrlRequestCallback pattern
-- [ ] Handle response body accumulation
-- [ ] Write unit tests
-- [ ] Commit and push
+- [x] Create `CronetSharp/Client/ResponseHandler.cs`
+- [x] Port from `cronet-rs/src/client/response_handler.rs`
+- [x] Implement UrlRequestCallback pattern
+- [x] Handle response body accumulation
+- [x] Write unit tests (9 test cases)
+- [x] Commit and push
 
 ### 1.5 Main Client Class
-- [ ] Create `CronetSharp/Client/CronetClient.cs`
-- [ ] Port from `cronet-rs/src/client/client.rs`
-- [ ] Implement Send() and SendAsync() methods
-- [ ] Add timeout handling
-- [ ] Add redirect handling
-- [ ] Write unit tests
-- [ ] Commit and push
+- [x] Create `CronetSharp/Client/CronetClient.cs`
+- [x] Port from `cronet-rs/src/client/client.rs`
+- [x] Implement Send() and SendAsync() methods
+- [x] Add timeout handling
+- [x] Add redirect handling
+- [x] Write unit tests (19 test cases)
+- [x] Commit and push
 
 ### 1.6 End-to-End Tests
 - [ ] E2E test: Simple GET request
@@ -128,6 +128,13 @@
 - [x] Port ClientError.cs (Phase 1.1)
 - [x] Port Body.cs (Phase 1.2)
 - [x] Write unit tests for ClientError and Body
+- [x] Port BodyUploadProvider.cs (Phase 1.3)
+- [x] Write unit tests for BodyUploadProvider (10 tests)
+- [x] Port ResponseHandler.cs (Phase 1.4)
+- [x] Write unit tests for ResponseHandler (9 tests)
+- [x] Port CronetClient.cs (Phase 1.5)
+- [x] Write unit tests for CronetClient (19 tests)
+- [x] Add FromException method to ClientError
 
 ---
 
@@ -154,4 +161,6 @@ None currently.
 
 ---
 
-**Next Action:** Port BodyUploadProvider.cs from cronet-rs/src/client/body_upload_provider.rs
+**Next Action:** Write end-to-end integration tests for the Client module
+
+**Phase 1 Status:** ✅ COMPLETE (5/5 files ported, 38+ unit tests written)
