@@ -1,23 +1,23 @@
 # CronetSharp Porting TODO List
 
-**Last Updated:** 2025-10-21
+**Last Updated:** 2025-10-21 (Updated by Claude)
 
 ---
 
 ## Phase 1: Client Module Foundation
 
 ### 1.1 Client Error Types
-- [ ] Create `CronetSharp/Client/ClientError.cs`
-- [ ] Port error enums from `cronet-rs/src/client/error.rs`
-- [ ] Write unit tests in `CronetSharp.Tests/Client/ClientErrorTest.cs`
-- [ ] Commit and push
+- [x] Create `CronetSharp/Client/ClientError.cs`
+- [x] Port error enums from `cronet-rs/src/client/error.rs`
+- [x] Write unit tests in `CronetSharp.Tests/Client/ClientErrorTest.cs`
+- [x] Commit and push
 
 ### 1.2 Body Abstraction
-- [ ] Create `CronetSharp/Client/Body.cs`
-- [ ] Port from `cronet-rs/src/client/body.rs`
-- [ ] Support byte[], string, Stream, file paths
-- [ ] Write unit tests
-- [ ] Commit and push
+- [x] Create `CronetSharp/Client/Body.cs`
+- [x] Port from `cronet-rs/src/client/body.rs`
+- [x] Support byte[], string, Stream, file paths
+- [x] Write unit tests
+- [x] Commit and push
 
 ### 1.3 Body Upload Provider
 - [ ] Create `CronetSharp/Client/BodyUploadProvider.cs`
@@ -125,6 +125,9 @@
 - [x] Create PORTING_PLAN.md
 - [x] Create TODO.md
 - [x] Initial commit
+- [x] Port ClientError.cs (Phase 1.1)
+- [x] Port Body.cs (Phase 1.2)
+- [x] Write unit tests for ClientError and Body
 
 ---
 
@@ -151,4 +154,4 @@ None currently.
 
 ---
 
-**Next Action:** Create Client directory and start with ClientError.cs
+**Next Action:** Port BodyUploadProvider.cs from cronet-rs/src/client/body_upload_provider.rs
