@@ -1,6 +1,6 @@
 # CronetSharp Porting TODO List
 
-**Last Updated:** 2025-10-21 (Phase 1 Complete Including E2E Tests)
+**Last Updated:** 2025-10-21 (Phase 2 Complete)
 
 ---
 
@@ -60,19 +60,19 @@
 
 ---
 
-## Phase 2: Ordered Request Support
+## Phase 2: Ordered Request Support ✅ COMPLETE
 
 ### 2.1 OrderedRequest Builder
-- [ ] Create `CronetSharp/OrderedRequest.cs`
-- [ ] Port from `cronet-rs/src/ordered_request.rs`
-- [ ] Use List<KeyValuePair> for header ordering
-- [ ] Write unit tests
-- [ ] Commit and push
+- [x] Create `CronetSharp/OrderedRequest.cs`
+- [x] Port from `cronet-rs/src/ordered_request.rs`
+- [x] Use List<(string, string)> for header ordering
+- [x] Write unit tests (37 comprehensive tests)
+- [x] Commit and push
 
 ### 2.2 Integration Tests
-- [ ] Test: Header ordering preserved
-- [ ] Test: Compare with UrlRequestParams
-- [ ] Commit and push
+- [x] Test: Header ordering preserved (included in unit tests)
+- [x] Test: Compare with UrlRequestParams (included in unit tests)
+- [x] Commit and push
 
 ---
 
@@ -136,6 +136,8 @@
 - [x] Port CronetClient.cs (Phase 1.5)
 - [x] Write unit tests for CronetClient (19 tests)
 - [x] Add FromException method to ClientError
+- [x] Port OrderedRequest.cs (Phase 2.1)
+- [x] Write unit tests for OrderedRequest (37 tests)
 
 ---
 
@@ -162,6 +164,7 @@ None currently.
 
 ---
 
-**Next Action:** Begin Phase 2 - OrderedRequest Support
+**Next Action:** Begin Phase 3 - Export Layer (C API Interop)
 
-**Phase 1 Status:** ✅ COMPLETE (5/5 files ported, 38+ unit tests, 24 E2E tests written)
+**Phase 1 Status:** ✅ COMPLETE (5/5 files ported, 38+ unit tests, 24 E2E tests)
+**Phase 2 Status:** ✅ COMPLETE (OrderedRequest with 37 unit tests)
