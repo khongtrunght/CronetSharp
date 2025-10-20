@@ -21,7 +21,7 @@ namespace CronetSharp.Client
         /// <summary>
         /// Gets the engine result code, if applicable.
         /// </summary>
-        public EngineResult? EngineResultCode { get; }
+        public EngineResult? EngineResultCode { get; private set; }
 
         private ClientError(ClientErrorType errorType, string message, Exception innerException = null)
             : base(message, innerException)
@@ -79,6 +79,24 @@ namespace CronetSharp.Client
             return new ClientError(
                 ClientErrorType.TimeoutError,
                 "Request timed out");
+        }
+
+        /// <summary>
+        /// Creates a ClientError from a generic exception.
+        /// </summary>
+        /// <param name="exception">The exception that occurred.</param>
+        /// <returns>A ClientError wrapping the exception.</returns>
+        public static ClientError FromException(Exception exception)
+        {
+            if (exception is CronetException cronetEx)
+            {
+                return FromCronetError(cronetEx);
+            }
+
+            return new ClientError(
+                ClientErrorType.CronetError,
+                exception.Message,
+                exception);
         }
 
         /// <summary>
